@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us - My SwimBox</title>
+  {%load static%}
+  <style>
+    /* General Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background: #00acc1;
+      color: #fff;
+      padding: 20px 0;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.5em;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    main h2 {
+      color: #00acc1;
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    main p {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+
+    main img {
+      max-width: 100%;
+      height: auto;
+      margin: 20px 0;
+      border-radius: 8px;
+      opacity: 0;
+      transform: translateX(-50px);
+      transition: opacity 1s ease, transform 1s ease;
+    }
+
+    .image-right {
+      transform: translateX(50px);
+    }
+
+    .visible {
+      opacity: 1;
+      transform: translateX(0);
+    }
+
+    footer {
+      text-align: center;
+      background: #00acc1;
+      color: #fff;
+      padding: 10px 0;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    footer p {
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>About My SwimBox</h1>
+  </header>
+
+  <main>
+    <h2>Welcome to My SwimBox</h2>
+    <img src="{% static 'images/image 21.jpg' %}" alt="Welcome to My SwimBox" class="image-left">
+    <p>Welcome to My SwimBox, where luxury meets innovation. For over three years, we have been redefining outdoor living with our exquisite shipping container pools, seamlessly blending functionality, sustainability, and elegance.</p>
+
+    <img src="{% static 'images/image 22.jpg' %}" alt="Exquisite Shipping Container Pool" class="image-right">
+    <p>Crafted with precision and passion, our pools are designed to offer a unique statement piece for your home—a symbol of sophistication that transforms your space into a personal oasis. Each pool reflects our unwavering commitment to quality, ensuring a product that is as durable as it is visually stunning.</p>
+
+    <p>Our clientele includes discerning individuals who seek the finest in bespoke solutions. By combining cutting-edge design with a personalized approach, we create experiences that resonate with your aspirations. Whether it’s for relaxation, recreation, or redefining your outdoor lifestyle, we are here to bring your vision to life.</p>
+
+    <p>At My SwimBox, trust and excellence form the cornerstone of everything we do. Join us in crafting luxury, one container pool at a time.</p>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 My SwimBox. All rights reserved.</p>
+  </footer>
+
+  <script>
+    function handleScroll() {
+      const images = document.querySelectorAll('img');
+      images.forEach(image => {
+        const rect = image.getBoundingClientRect();
+        if (rect.top < window.innerHeight && rect.bottom > 0) {
+          image.classList.add('visible');
+        }
+      });
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    document.addEventListener('DOMContentLoaded', handleScroll);
+  </script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Swimming Pool Gallery</title>
+    {% load static %}
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #e0f7fa; /* Light blue background */
+            color: #4a90e2; /* Complementary text color */
+        }
+
+        section {
+            padding: 50px 10%;
+            text-align: center;
+            background-color: #ffffff; /* White background for sections */
+            border-radius: 10px;
+            margin: 30px auto;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #4a90e2; /* Deep teal for headings */
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        p.section-title {
+            margin-bottom: 30px;
+            font-size: 1.2em;
+            color: #004d40; /* Text matches theme */
+            font-weight: 500;
+        }
+
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 25px;
+        }
+
+        .gallery img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.05); /* Slight zoom on hover */
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        footer {
+            text-align: center;
+            background-color: #4a90e2; 
+            color: #ffffff;
+            padding: 15px 0;
+            margin-top: 50px;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Section 1: Manufacturing Process -->
+    <section>
+        <h2>Manufacturing the Swimming Pool</h2>
+        <p class="section-title">Images of the pool manufacturing process</p>
+        <div class="gallery">
+            <img src="{% static 'images/manu1.jpg' %}" alt="Manufacturing Stage 1">
+            <img src="{% static 'images/manu2.jpg' %}" alt="Manufacturing Stage 2">
+            <img src="{% static 'images/manu3.jpg' %}" alt="Manufacturing Stage 3">
+            <img src="{% static 'images/manu4.jpg' %}" alt="Manufacturing Stage 4">
+            <img src="{% static 'images/manu5.jpg' %}" alt="Manufacturing Stage 5">
+        </div>
+    </section>
+
+    <!-- Section 2: Finished Product -->
+    <section>
+        <h2>Finished Product</h2>
+        <p class="section-title">View the final product of the swimming pool</p>
+        <div class="gallery">
+            <img src="{% static 'images/finished_product1.jpg' %}" alt="Finished Pool 1">
+            <img src="{% static 'images/finished_product2.jpg' %}" alt="Finished Pool 2">
+            <img src="{% static 'images/finished_product3.jpg' %}" alt="Finished Pool 3">
+            <img src="{% static 'images/finished_product4.jpg' %}" alt="Finished Pool 4">
+        </div>
+    </section>
+
+    <!-- Section 3: Pool Installation -->
+    <section>
+        <h2>Installation in Homes & Recreational Areas</h2>
+        <p class="section-title">How swimming pools are set up in different areas</p>
+        <div class="gallery">
+            <img src="{% static 'images/installation1.jpg' %}" alt="Pool Installation 1">
+            <img src="{% static 'images/installation2.jpg' %}" alt="Pool Installation 2">
+            <img src="{% static 'images/installation3.jpg' %}" alt="Pool Installation 3">
+            <img src="{% static 'images/installation4.jpg' %}" alt="Pool Installation 4">
+        </div>
+    </section>
+
+    <footer>
+        © 2024 Swimming Pool Co. | All Rights Reserved
+    </footer>
+
+</body>
+</html>
